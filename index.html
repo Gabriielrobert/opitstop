@@ -398,6 +398,33 @@
       </div>
      </div>
     </div>
+
+<script>
+document.getElementById("orcamento-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const whatsapp = document.getElementById("whatsapp").value.trim();
+    const marca = document.getElementById("marca").value.trim();
+    const modelo = document.getElementById("modelo").value.trim();
+    const problema = document.getElementById("problema").value.trim();
+
+    const numeroDestino = "5511991271581"; // 🔴 COLOQUE SEU NÚMERO AQUI COM DDI
+
+    const mensagem = 
+        "Olá, gostaria de solicitar um orçamento:%0A%0A" +
+        "👤 Nome: " + nome + "%0A" +
+        "📱 WhatsApp: " + whatsapp + "%0A" +
+        "🚗 Veículo: " + marca + " " + modelo + "%0A" +
+        "🛠 Problema: " + problema;
+
+    const url = "https://wa.me/" + numeroDestino + "?text=" + encodeURIComponent(mensagem);
+
+    window.open(url, "_blank");
+});
+</script>
+
+
    </section><!-- Sobre Section -->
    <section id="sobre" class="py-20 bg-[#0D0D0D] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
