@@ -7,6 +7,57 @@
 <link rel="apple-touch-icon" sizes="180x180" href="Favicon.png">
 <!----Favicon---->
   
+<!----Back to top---->
+<html lang="pt-BR">
+<head>
+  <style>
+    .back-to-top {
+      position: fixed;
+      bottom: 115px;
+      right: 37px;
+      z-index: 3000;
+      opacity: 0; /* Define a opacidade inicial */
+      transition: opacity 0.5s;
+    }
+
+    .back-to-top.show {
+      opacity: 1; /* Quando o botão estiver visível, a opacidade é 1 (sem transparência) */
+    }
+
+    .back-to-top img {
+      opacity: 0.2; /* Define a opacidade do ícone para 50% (leve transparência) */
+    }
+  </style>
+</head>
+<body>
+  <a href="#top" class="back-to-top">
+    <img width="35" src="https://i.ibb.co/5jN69gj/02-Icone-seta-para-cima.png" />
+  </a>
+
+  <h1 id="top"></h1>
+
+  <script>
+    document.addEventListener('scroll', function() {
+      var scrollPosition = window.scrollY;
+      if (scrollPosition > 100) {
+        document.querySelector('.back-to-top').classList.add('show');
+      } else {
+        document.querySelector('.back-to-top').classList.remove('show');
+      }
+    });
+
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
+<!----Back to top---->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ophicina Pit Stop</title>
